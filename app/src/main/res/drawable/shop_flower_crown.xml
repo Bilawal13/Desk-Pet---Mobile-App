@@ -1,0 +1,32 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- Vine Ring -->
+    <path
+        android:strokeColor="#81C784"
+        android:strokeWidth="4"
+        android:pathData="M18,52 C18,36 78,36 78,52 C78,64 18,64 18,52 Z" />
+    <!-- Daisy 1 -->
+    <path
+        android:fillColor="#FFF"
+        android:pathData="M30,36 A5,5 0 1,0 30,46 A5,5 0 1,0 30,36 Z" />
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M30,39 A2.5,2.5 0 1,0 30,44 A2.5,2.5 0 1,0 30,39 Z" />
+    <!-- Daisy 2 (Center) -->
+    <path
+        android:fillColor="#F8BBD0"
+        android:pathData="M48,32 A6,6 0 1,0 48,44 A6,6 0 1,0 48,32 Z" />
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M48,35 A3,3 0 1,0 48,41 A3,3 0 1,0 48,35 Z" />
+    <!-- Daisy 3 -->
+    <path
+        android:fillColor="#FFF"
+        android:pathData="M66,36 A5,5 0 1,0 66,46 A5,5 0 1,0 66,36 Z" />
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M66,39 A2.5,2.5 0 1,0 66,44 A2.5,2.5 0 1,0 66,39 Z" />
+</vector>

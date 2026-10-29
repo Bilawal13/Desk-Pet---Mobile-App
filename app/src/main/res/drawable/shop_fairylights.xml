@@ -1,0 +1,27 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- Garland wire string -->
+    <path
+        android:strokeColor="#78909C"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M8,28 C28,48 48,22 88,38" />
+    <!-- Star Light 1 -->
+    <path
+        android:fillColor="#FFF59D"
+        android:pathData="M24,34 L26,40 L32,41 L27,45 L29,51 L24,47 L19,51 L21,45 L16,41 L22,40 Z" />
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M24,37 L25,41 L29,42 L26,44 L27,48 L24,45 L21,48 L22,44 L19,42 L23,41 Z" />
+    <!-- Star Light 2 -->
+    <path
+        android:fillColor="#FFE082"
+        android:pathData="M50,24 L52,29 L57,30 L53,34 L55,39 L50,36 L45,39 L47,34 L43,30 L48,29 Z" />
+    <!-- Star Light 3 -->
+    <path
+        android:fillColor="#FFF59D"
+        android:pathData="M76,32 L78,38 L84,39 L79,43 L81,49 L76,45 L71,49 L73,43 L68,39 L74,38 Z" />
+</vector>

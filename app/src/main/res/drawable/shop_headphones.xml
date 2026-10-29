@@ -1,0 +1,36 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- Headband -->
+    <path
+        android:strokeColor="#7E57C2"
+        android:strokeWidth="6"
+        android:strokeLineCap="round"
+        android:pathData="M24,52 C24,28 72,28 72,52" />
+    <!-- Inner soft headband cushion -->
+    <path
+        android:strokeColor="#D1C4E9"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:pathData="M32,44 C34,32 62,32 64,44" />
+    <!-- Left ear cup -->
+    <path
+        android:fillColor="#9575CD"
+        android:pathData="M18,48 C18,44 26,44 26,48 L26,68 C26,72 18,72 18,68 Z" />
+    <path
+        android:fillColor="#B39DDB"
+        android:pathData="M22,46 C22,42 30,42 30,46 L30,70 C30,74 22,74 22,70 Z" />
+    <!-- Right ear cup -->
+    <path
+        android:fillColor="#9575CD"
+        android:pathData="M70,48 C70,44 78,44 78,48 L78,68 C78,72 70,72 70,68 Z" />
+    <path
+        android:fillColor="#B39DDB"
+        android:pathData="M66,46 C66,42 74,42 74,46 L74,70 C74,74 66,74 66,70 Z" />
+    <!-- Music notes -->
+    <path
+        android:fillColor="#FFB74D"
+        android:pathData="M76,26 C76,24 82,22 84,24 L84,32 C83,30 80,30 78,32 C76,34 78,36 80,36 C83,36 84,34 84,32 Z" />
+</vector>

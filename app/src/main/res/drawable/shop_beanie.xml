@@ -1,0 +1,23 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- Pompom on top -->
+    <path
+        android:fillColor="#FFCC80"
+        android:pathData="M48,18 A7,7 0 1,0 48,32 A7,7 0 1,0 48,18 Z" />
+    <!-- Beanie Dome -->
+    <path
+        android:fillColor="#FF8A65"
+        android:pathData="M24,62 C22,40 32,28 48,28 C64,28 74,40 72,62 Z" />
+    <!-- Knitted cuff -->
+    <path
+        android:fillColor="#D84315"
+        android:pathData="M20,60 L76,60 L76,74 L20,74 Z" />
+    <!-- Ribbed lines -->
+    <path
+        android:strokeColor="#BF360C"
+        android:strokeWidth="1.5"
+        android:pathData="M28,60 L28,74 M36,60 L36,74 M44,60 L44,74 M52,60 L52,74 M60,60 L60,74 M68,60 L68,74" />
+</vector>

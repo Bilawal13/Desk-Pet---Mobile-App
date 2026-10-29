@@ -1,0 +1,6 @@
+<resources>
+    <color name="app_whitish_background">#FFFBF9F5</color>
+    <style name="Theme.MyApplication" parent="android:Theme.DeviceDefault.NoActionBar">
+        <item name="android:windowBackground">@color/app_whitish_background</item>
+    </style>
+</resources>

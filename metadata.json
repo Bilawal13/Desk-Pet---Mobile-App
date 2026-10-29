@@ -1,0 +1,6 @@
+{
+  "name": "Desk Pet",
+  "description": "Cozy productivity companion and virtual pet. Complete tasks, focus sessions, and daily missions to nurture your pet and customize your sanctuary.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Filter for soft pill shadow -->
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" />
+    </filter>
+  </defs>
+
+  <!-- ========================================== -->
+  <!-- 01. FLOOR SHADOW                           -->
+  <!-- ========================================== -->
+  <g id="Floor_Shadow">
+    <ellipse cx="250" cy="455" rx="115" ry="18" fill="#1E202B" opacity="0.18" filter="url(#softShadow)" />
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 02. TAIL (Background layer)                -->
+  <!-- ========================================== -->
+  <g id="Tail">
+    <path d="M 330 380 C 375 385, 395 330, 365 305 C 345 285, 335 320, 320 345" 
+          fill="#FFF8EC" stroke="#232733" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 03. BODY & PAWS                            -->
+  <!-- ========================================== -->
+  <g id="Body_Group">
+    <!-- Main Chubby Torso -->
+    <path id="Torso" 
+          d="M 175 320 C 170 395, 200 440, 250 440 C 300 440, 330 395, 325 320 Z" 
+          fill="#FFF8EC" stroke="#232733" stroke-width="7" stroke-linejoin="round" />
+
+    <!-- Mint Belly Patch -->
+    <ellipse id="Belly_Patch" cx="250" cy="385" rx="42" ry="32" fill="#B9F5D0" opacity="0.75" />
+
+    <!-- Front Left Paw -->
+    <path id="Paw_Left" 
+          d="M 210 405 C 210 435, 225 442, 232 442 C 240 442, 242 430, 242 410" 
+          fill="#FFF8EC" stroke="#232733" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Front Right Paw -->
+    <path id="Paw_Right" 
+          d="M 258 410 C 258 430, 260 442, 268 442 C 275 442, 290 435, 290 405" 
+          fill="#FFF8EC" stroke="#232733" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 04. EARS                                   -->
+  <!-- ========================================== -->
+  <g id="Ears_Group">
+    <!-- Left Ear -->
+    <g id="Ear_Left">
+      <path d="M 155 185 C 130 110, 175 90, 215 130 Z" 
+            fill="#FFF8EC" stroke="#232733" stroke-width="7" stroke-linejoin="round" />
+      <!-- Left Inner Ear Mint -->
+      <path d="M 165 170 C 150 125, 175 115, 200 140 Z" fill="#B9F5D0" />
+    </g>
+
+    <!-- Right Ear -->
+    <g id="Ear_Right">
+      <path d="M 345 185 C 370 110, 325 90, 285 130 Z" 
+            fill="#FFF8EC" stroke="#232733" stroke-width="7" stroke-linejoin="round" />
+      <!-- Right Inner Ear Mint -->
+      <path d="M 335 170 C 350 125, 325 115, 300 140 Z" fill="#B9F5D0" />
+    </g>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 05. HEAD BASE (Duolingo Bean / Dome)       -->
+  <!-- ========================================== -->
+  <g id="Head_Base_Group">
+    <path id="Head_Contour" 
+          d="M 145 230 C 135 155, 195 120, 250 120 C 305 120, 365 155, 355 230 C 362 295, 310 330, 250 330 C 190 330, 138 295, 145 230 Z" 
+          fill="#FFF8EC" stroke="#232733" stroke-width="7" stroke-linejoin="round" />
+
+    <!-- Head Specular Highlight (Duolingo clean reflection pill) -->
+    <path id="Head_Highlight" 
+          d="M 185 145 C 205 133, 230 133, 240 137" 
+          fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.9" />
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 06. HEAD SPROUT (Desk Pet Signature Item)  -->
+  <!-- ========================================== -->
+  <g id="Sprout_Group">
+    <!-- Stem -->
+    <path id="Sprout_Stem" 
+          d="M 250 122 Q 252 85 272 75" 
+          fill="none" stroke="#232733" stroke-width="6" stroke-linecap="round" />
+    <!-- Leaf -->
+    <path id="Sprout_Leaf" 
+          d="M 272 75 C 298 62, 312 85, 290 100 C 275 106, 268 88, 272 75 Z" 
+          fill="#58CC02" stroke="#232733" stroke-width="6" stroke-linejoin="round" />
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 07. BLUSH CHEEKS                           -->
+  <!-- ========================================== -->
+  <g id="Cheeks_Group">
+    <ellipse id="Cheek_Left" cx="178" cy="265" rx="18" ry="12" fill="#FFAAA6" opacity="0.95" />
+    <ellipse id="Cheek_Right" cx="322" cy="265" rx="18" ry="12" fill="#FFAAA6" opacity="0.95" />
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 08. EXPRESSIVE EYES                        -->
+  <!-- ========================================== -->
+  <g id="Eyes_Group">
+    <!-- LEFT EYE -->
+    <g id="Eye_Left">
+      <!-- Sclera / Base Eye Capsule -->
+      <ellipse cx="205" cy="232" rx="26" ry="30" fill="#1F2430" />
+      <!-- Big Upper Specular Dot -->
+      <circle cx="197" cy="222" r="10" fill="#FFFFFF" />
+      <!-- Small Lower Specular Dot -->
+      <circle cx="215" cy="244" r="5" fill="#FFFFFF" />
+    </g>
+
+    <!-- RIGHT EYE -->
+    <g id="Eye_Right">
+      <!-- Sclera / Base Eye Capsule -->
+      <ellipse cx="295" cy="232" rx="26" ry="30" fill="#1F2430" />
+      <!-- Big Upper Specular Dot -->
+      <circle cx="287" cy="222" r="10" fill="#FFFFFF" />
+      <!-- Small Lower Specular Dot -->
+      <circle cx="305" cy="244" r="5" fill="#FFFFFF" />
+    </g>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 09. EYEBROWS (Floating & Highly Expressive)-->
+  <!-- ========================================== -->
+  <g id="Eyebrows_Group">
+    <!-- Left Eyebrow -->
+    <path id="Eyebrow_Left" 
+          d="M 185 186 Q 206 176 226 186" 
+          fill="none" stroke="#1F2430" stroke-width="8" stroke-linecap="round" />
+
+    <!-- Right Eyebrow -->
+    <path id="Eyebrow_Right" 
+          d="M 274 186 Q 294 176 315 186" 
+          fill="none" stroke="#1F2430" stroke-width="8" stroke-linecap="round" />
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 10. NOSE & MOUTH STATES                    -->
+  <!-- ========================================== -->
+  <g id="Mouth_Group">
+    <!-- Cute Triangle Nose -->
+    <path id="Nose" 
+          d="M 245 244 L 255 244 C 255 244, 252 250, 250 252 C 248 250, 245 244, 245 244 Z" 
+          fill="#1F2430" stroke="#1F2430" stroke-width="2" stroke-linejoin="round" />
+
+    <!-- State A: Default Cute Cat ω Mouth -->
+    <path id="Mouth_Default_Cat" 
+          d="M 235 254 Q 242 262 250 256 Q 258 262 265 254" 
+          fill="none" stroke="#1F2430" stroke-width="5" stroke-linecap="round" />
+
+    <!-- State B: Celebrate Open Smile (Hidden by default for rigging) -->
+    <path id="Mouth_Open_Joy" display="none"
+          d="M 235 254 Q 250 282 265 254 Z" 
+          fill="#FF6B81" stroke="#1F2430" stroke-width="5" stroke-linejoin="round" />
+
+    <!-- State C: Sad / Pout (Hidden by default for rigging) -->
+    <path id="Mouth_Sad" display="none"
+          d="M 240 262 Q 250 254 260 262" 
+          fill="none" stroke="#1F2430" stroke-width="5" stroke-linecap="round" />
+  </g>
+
+</svg>

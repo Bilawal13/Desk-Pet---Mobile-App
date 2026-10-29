@@ -1,0 +1,37 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- Straw -->
+    <path
+        android:strokeColor="#8E24AA"
+        android:strokeWidth="5"
+        android:strokeLineCap="round"
+        android:pathData="M52,14 L44,46" />
+    <!-- Cup Body -->
+    <path
+        android:fillColor="#FFE0B2"
+        android:pathData="M30,34 L66,34 L60,82 L36,82 Z" />
+    <!-- Tea Liquid -->
+    <path
+        android:fillColor="#D7CCC8"
+        android:pathData="M32,44 L64,44 L60,80 L36,80 Z" />
+    <!-- Tapioca Boba Pearls -->
+    <path
+        android:fillColor="#3E2723"
+        android:pathData="M42,72 A3,3 0 1,0 42,78 A3,3 0 1,0 42,72 Z" />
+    <path
+        android:fillColor="#3E2723"
+        android:pathData="M50,70 A3,3 0 1,0 50,76 A3,3 0 1,0 50,70 Z" />
+    <path
+        android:fillColor="#3E2723"
+        android:pathData="M46,64 A3,3 0 1,0 46,70 A3,3 0 1,0 46,64 Z" />
+    <path
+        android:fillColor="#3E2723"
+        android:pathData="M54,74 A3,3 0 1,0 54,80 A3,3 0 1,0 54,74 Z" />
+    <!-- Cup Rim/Lid -->
+    <path
+        android:fillColor="#E0E0E0"
+        android:pathData="M26,30 L70,30 L70,36 L26,36 Z" />
+</vector>

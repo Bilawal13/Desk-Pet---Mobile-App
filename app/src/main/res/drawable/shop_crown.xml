@@ -1,0 +1,23 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- Golden Crown Base -->
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M18,66 L26,34 L40,50 L48,28 L56,50 L70,34 L78,66 Z" />
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M16,66 L80,66 L78,74 L18,74 Z" />
+    <!-- Jewels on tips -->
+    <path
+        android:fillColor="#E91E63"
+        android:pathData="M48,24 A4,4 0 1,0 48,32 A4,4 0 1,0 48,24 Z" />
+    <path
+        android:fillColor="#00BCD4"
+        android:pathData="M26,30 A3.5,3.5 0 1,0 26,37 A3.5,3.5 0 1,0 26,30 Z" />
+    <path
+        android:fillColor="#00BCD4"
+        android:pathData="M70,30 A3.5,3.5 0 1,0 70,37 A3.5,3.5 0 1,0 70,30 Z" />
+</vector>

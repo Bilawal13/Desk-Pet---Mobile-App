@@ -1,0 +1,38 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- Ceramic Pot -->
+    <path
+        android:fillColor="#FFE0B2"
+        android:pathData="M28,52 L68,52 L62,82 L34,82 Z" />
+    <path
+        android:fillColor="#FFCC80"
+        android:pathData="M24,48 L72,48 L72,54 L24,54 Z" />
+    <!-- Cute pot cheeks and smile -->
+    <path
+        android:fillColor="#FF8A80"
+        android:pathData="M38,64 A3,3 0 1,0 38,70 A3,3 0 1,0 38,64 Z" />
+    <path
+        android:fillColor="#FF8A80"
+        android:pathData="M58,64 A3,3 0 1,0 58,70 A3,3 0 1,0 58,64 Z" />
+    <path
+        android:strokeColor="#5D4037"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M45,67 Q48,71 51,67" />
+    <!-- Succulent leaves -->
+    <path
+        android:fillColor="#A5D6A7"
+        android:pathData="M48,22 C36,36 34,48 48,48 C62,48 60,36 48,22 Z" />
+    <path
+        android:fillColor="#81C784"
+        android:pathData="M32,32 C26,42 30,50 44,50 C44,38 38,34 32,32 Z" />
+    <path
+        android:fillColor="#81C784"
+        android:pathData="M64,32 C70,42 66,50 52,50 C52,38 58,34 64,32 Z" />
+    <path
+        android:fillColor="#C8E6C9"
+        android:pathData="M48,28 C42,38 42,46 48,46 C54,46 54,38 48,28 Z" />
+</vector>

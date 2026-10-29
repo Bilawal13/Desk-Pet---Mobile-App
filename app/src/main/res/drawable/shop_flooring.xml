@@ -1,0 +1,21 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- Parquet wood base -->
+    <path
+        android:fillColor="#FFE0B2"
+        android:pathData="M16,20 L80,20 L80,76 L16,76 Z" />
+    <path
+        android:strokeColor="#D7CCC8"
+        android:strokeWidth="2"
+        android:pathData="M16,38 L80,38 M16,56 L80,56 M44,20 L44,38 M52,38 L52,56 M36,56 L36,76" />
+    <!-- Sakura blossom petals on floor -->
+    <path
+        android:fillColor="#F8BBD0"
+        android:pathData="M64,30 C60,26 68,22 72,28 C74,32 68,36 64,30 Z" />
+    <path
+        android:fillColor="#F48FB1"
+        android:pathData="M30,46 C28,42 34,40 38,44 C39,47 34,49 30,46 Z" />
+</vector>

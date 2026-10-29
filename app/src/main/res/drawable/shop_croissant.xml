@@ -1,0 +1,20 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- Golden Croissant -->
+    <path
+        android:fillColor="#FFA726"
+        android:pathData="M18,58 C20,38 40,32 48,32 C56,32 76,38 78,58 C72,66 66,54 48,54 C30,54 24,66 18,58 Z" />
+    <path
+        android:fillColor="#FFB74D"
+        android:pathData="M34,36 C42,34 54,34 62,36 C60,48 54,54 48,54 C42,54 36,48 34,36 Z" />
+    <!-- Strawberry topper -->
+    <path
+        android:fillColor="#E53935"
+        android:pathData="M48,22 C42,22 40,28 48,36 C56,28 54,22 48,22 Z" />
+    <path
+        android:fillColor="#43A047"
+        android:pathData="M46,20 L50,20 L48,24 Z" />
+</vector>

@@ -1,0 +1,26 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- Soft shadow -->
+    <path
+        android:fillColor="#25000000"
+        android:pathData="M16,74 C26,84 70,84 80,74 C85,69 11,69 16,74 Z" />
+    <!-- Beanbag body -->
+    <path
+        android:fillColor="#D1C4E9"
+        android:pathData="M24,44 C20,62 26,76 48,76 C70,76 76,62 72,44 C70,30 58,24 48,24 C38,24 26,30 24,44 Z" />
+    <!-- Beanbag highlight cushion -->
+    <path
+        android:fillColor="#EDE7F6"
+        android:pathData="M32,42 C30,56 34,66 48,66 C62,66 66,56 64,42 C62,32 54,28 48,28 C42,28 34,32 32,42 Z" />
+    <!-- Top indentation crease -->
+    <path
+        android:fillColor="#B39DDB"
+        android:pathData="M44,22 C48,25 50,25 54,22 C52,20 46,20 44,22 Z" />
+    <path
+        android:strokeColor="#9575CD"
+        android:strokeWidth="2"
+        android:pathData="M48,24 L48,34" />
+</vector>

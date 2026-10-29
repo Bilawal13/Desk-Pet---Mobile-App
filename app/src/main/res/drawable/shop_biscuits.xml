@@ -1,0 +1,20 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- Fish Cookie 1 -->
+    <path
+        android:fillColor="#FFB74D"
+        android:pathData="M24,42 C34,34 54,36 62,46 L74,38 L74,54 L62,46 C54,56 34,58 24,50 C18,46 18,46 24,42 Z" />
+    <path
+        android:fillColor="#FFE082"
+        android:pathData="M28,44 C36,38 50,40 56,47 L66,42 L66,50 L56,47 C50,54 36,54 28,48 Z" />
+    <path
+        android:fillColor="#5D4037"
+        android:pathData="M30,44 A2,2 0 1,0 30,48 A2,2 0 1,0 30,44 Z" />
+    <!-- Mini treat crumbs & heart -->
+    <path
+        android:fillColor="#FF8A80"
+        android:pathData="M70,26 C68,22 62,24 64,28 L70,34 L76,28 C78,24 72,22 70,26 Z" />
+</vector>

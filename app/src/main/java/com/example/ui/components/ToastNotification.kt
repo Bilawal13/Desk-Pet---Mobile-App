@@ -1,0 +1,63 @@
+package com.example.ui.components
+
+import androidx.compose.animation.*
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Celebration
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.ui.theme.*
+
+@Composable
+fun ToastNotification(
+    message: String?,
+    modifier: Modifier = Modifier
+) {
+    AnimatedVisibility(
+        visible = message != null,
+        enter = slideInVertically(initialOffsetY = { -it }) + fadeIn(),
+        exit = slideOutVertically(targetOffsetY = { -it }) + fadeOut(),
+        modifier = modifier
+            .fillMaxWidth()
+            .statusBarsPadding()
+            .padding(top = 56.dp, start = 24.dp, end = 24.dp)
+    ) {
+        if (message != null) {
+            Surface(
+                shape = CircleShape,
+                color = InverseSurface,
+                shadowElevation = 12.dp,
+                modifier = Modifier.wrapContentWidth(Alignment.CenterHorizontally)
+            ) {
+                Row(
+                    modifier = Modifier.padding(horizontal = 20.dp, vertical = 10.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Celebration,
+                        contentDescription = null,
+                        tint = SecondaryFixed,
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Text(
+                        text = message,
+                        style = MaterialTheme.typography.labelMedium,
+                        color = InverseOnSurface,
+                        fontSize = 13.sp
+                    )
+                }
+            }
+        }
+    }
+}
