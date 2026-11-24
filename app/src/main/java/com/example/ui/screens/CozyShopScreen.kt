@@ -236,8 +236,9 @@ fun CozyShopScreen(
                         horizontalArrangement = Arrangement.spacedBy(10.dp)
                     ) {
                         OutlinedButton(
-                            onClick = { viewModel.showToast("3D preview: Placed in room!") },
+                            onClick = { viewModel.previewProductInRoom(deal) },
                             shape = CircleShape,
+                            border = BorderStroke(1.5.dp, Primary),
                             modifier = Modifier.weight(1f).height(44.dp)
                         ) {
                             Row(
@@ -245,7 +246,7 @@ fun CozyShopScreen(
                                 horizontalArrangement = Arrangement.spacedBy(4.dp)
                             ) {
                                 Text("🛋️", fontSize = 14.sp)
-                                Text("3D Room Preview", style = MaterialTheme.typography.labelMedium)
+                                Text("Try in Room", style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.Bold)
                             }
                         }
 
@@ -440,6 +441,33 @@ fun CozyShopScreen(
                                 text = "${(profile.coins - product.priceCoins).coerceAtLeast(0)} Coins",
                                 style = MaterialTheme.typography.titleSmall,
                                 fontWeight = FontWeight.Bold
+                            )
+                        }
+                    }
+                }
+
+                if (!isPet && (product.category == "furniture" || product.category == "themes" || product.category == "accessories")) {
+                    OutlinedButton(
+                        onClick = {
+                            viewModel.closeProductPreview()
+                            viewModel.previewProductInRoom(product)
+                        },
+                        shape = CircleShape,
+                        border = BorderStroke(1.5.dp, Primary),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(48.dp)
+                    ) {
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                        ) {
+                            Text("🛋️", fontSize = 16.sp)
+                            Text(
+                                text = "Try in Room (Live 3D Preview)",
+                                style = MaterialTheme.typography.labelLarge,
+                                fontWeight = FontWeight.Bold,
+                                color = Primary
                             )
                         }
                     }

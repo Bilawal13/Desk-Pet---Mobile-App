@@ -13,8 +13,17 @@ import kotlinx.coroutines.launch
 
 import com.example.data.auth.SupabaseUser
 import com.example.ui.sound.AVAILABLE_SOUNDSCAPES
+import com.example.ui.sound.DeskPetAudioHaptics
 import com.example.ui.sound.SoothingSoundscapeEngine
 import com.example.ui.sound.SoundscapeItem
+
+enum class RoomWeather(val title: String, val emoji: String) {
+    AUTO("Auto Live", "🌤️"),
+    SUNNY("Sunny Day", "☀️"),
+    RAINY("Gentle Rain", "🌧️"),
+    SNOWY("Winter Snow", "❄️"),
+    SUNSET("Golden Sunset", "🌅")
+}
 
 enum class AppNavTab(val title: String, val iconName: String) {
     ROOM("Room", "cottage"),
@@ -342,6 +351,8 @@ class DeskPetViewModel(
         viewModelScope.launch {
             repository.petCompanion(activePet.value.id)
             setAnimationState(PetAnimationState.HAPPY)
+            DeskPetAudioHaptics.performPurrHaptic(getApplication())
+            DeskPetAudioHaptics.playPurrSound()
         }
     }
 
@@ -350,6 +361,8 @@ class DeskPetViewModel(
             val success = repository.feedPet(activePet.value.id)
             if (success) {
                 setAnimationState(PetAnimationState.FEED)
+                DeskPetAudioHaptics.performTactileTick(getApplication())
+                DeskPetAudioHaptics.playCrunchSound()
                 showToast("Yummy treat fed to ${activePet.value.name}! 🍓 (+15 Hunger, -10 🪙)")
             } else {
                 showToast("Not enough coins to buy snacks! Need 10 🪙")
@@ -491,6 +504,8 @@ class DeskPetViewModel(
         viewModelScope.launch {
             val success = repository.purchaseShopProduct(productId)
             if (success) {
+                DeskPetAudioHaptics.performCoinHaptic(getApplication())
+                DeskPetAudioHaptics.playCoinChimeSound()
                 showToast("Purchased and delivered to inventory! ✨")
                 closeProductPreview()
             } else {
@@ -499,8 +514,82 @@ class DeskPetViewModel(
         }
     }
 
+    // Dynamic Weather in Room
+    private val _roomWeather = MutableStateFlow(RoomWeather.AUTO)
+    val roomWeather: StateFlow<RoomWeather> = _roomWeather.asStateFlow()
+
+    fun setRoomWeather(weather: RoomWeather) {
+        _roomWeather.value = weather
+        DeskPetAudioHaptics.performTactileTick(getApplication())
+        showToast("Weather set to ${weather.emoji} ${weather.title}")
+    }
+
+    // Room Decor Customization & "Try in Room" Preview
+    private val _previewDecorOverrides = MutableStateFlow<Map<String, String>>(emptyMap())
+    val previewDecorOverrides: StateFlow<Map<String, String>> = _previewDecorOverrides.asStateFlow()
+
+    private val _activePreviewProduct = MutableStateFlow<ShopProduct?>(null)
+    val activePreviewProduct: StateFlow<ShopProduct?> = _activePreviewProduct.asStateFlow()
+
+    fun previewProductInRoom(product: ShopProduct) {
+        val slot = mapProductToSlot(product)
+        _previewDecorOverrides.value = _previewDecorOverrides.value + (slot to product.id)
+        _activePreviewProduct.value = product
+        selectTab(AppNavTab.ROOM)
+        DeskPetAudioHaptics.playWoodTapSound()
+        DeskPetAudioHaptics.performTactileTick(getApplication())
+        showToast("Previewing '${product.name}' in your room! 🛋️✨")
+    }
+
+    fun clearRoomPreview() {
+        _previewDecorOverrides.value = emptyMap()
+        _activePreviewProduct.value = null
+        DeskPetAudioHaptics.performTactileTick(getApplication())
+    }
+
+    fun confirmPreviewPurchase() {
+        val product = _activePreviewProduct.value ?: return
+        viewModelScope.launch {
+            val success = repository.purchaseShopProduct(product.id)
+            if (success) {
+                DeskPetAudioHaptics.performCoinHaptic(getApplication())
+                DeskPetAudioHaptics.playCoinChimeSound()
+                val slot = mapProductToSlot(product)
+                repository.setRoomDecorSlot(slot, product.id, true)
+                _previewDecorOverrides.value = emptyMap()
+                _activePreviewProduct.value = null
+                showToast("Purchased & permanently placed in your room! ✨🛋️")
+            } else {
+                showToast("Not enough coins! Complete focus sessions to earn more 🪙")
+            }
+        }
+    }
+
+    fun setRoomDecorSlot(slotId: String, itemId: String) {
+        viewModelScope.launch {
+            DeskPetAudioHaptics.playWoodTapSound()
+            DeskPetAudioHaptics.performTactileTick(getApplication())
+            repository.setRoomDecorSlot(slotId, itemId, true)
+            _previewDecorOverrides.value = _previewDecorOverrides.value - slotId
+            showToast("Room updated! ✨")
+        }
+    }
+
+    private fun mapProductToSlot(product: ShopProduct): String {
+        return when {
+            product.category == "themes" || product.id.contains("floor") || product.id.contains("rug") || product.id.contains("tatami") || product.id.contains("carpet") -> "rug_style"
+            product.id.contains("lamp") || product.id.contains("lantern") || product.id.contains("projector") || product.id.contains("light") -> "desk_lamp"
+            product.id.contains("tea") || product.id.contains("boba") || product.id.contains("cup") || product.id.contains("drink") -> "desk_mug"
+            product.id.contains("beanbag") || product.id.contains("pillow") || product.id.contains("chair") -> "beanbag"
+            product.id.contains("bonsai") || product.id.contains("succulent") || product.id.contains("plant") -> "window_plant"
+            product.id.contains("ivy") || product.id.contains("chime") || product.id.contains("stained") -> "window_frame"
+            product.id.contains("clock") || product.id.contains("poster") || product.id.contains("polaroid") -> "wall_art"
+            else -> "beanbag"
+        }
+    }
+
     // Profile Settings Dialog
-    private val _showProfileSheet = MutableStateFlow(true)
+    private val _showProfileSheet = MutableStateFlow(false)
     val showProfileSheet: StateFlow<Boolean> = _showProfileSheet.asStateFlow()
 
     fun setProfileSheetVisible(visible: Boolean) {

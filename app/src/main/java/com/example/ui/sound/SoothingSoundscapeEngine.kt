@@ -20,6 +20,7 @@ val AVAILABLE_SOUNDSCAPES = listOf(
     SoundscapeItem("lofi", "Lo-Fi Study Cafe", "Vinyl crackle & warm cozy cafe hum", "☕", "Focus Flow"),
     SoundscapeItem("fire", "Cozy Fireplace", "Warm crackling hearth & amber glow", "🔥", "Warm Rest"),
     SoundscapeItem("wind", "Forest Breeze", "Gentle pine breeze & airy rustle", "🍃", "Nature Calm"),
+    SoundscapeItem("purr", "Cozy Purr & Hearth", "Warm rhythmic cat purring & breath", "🐾", "Deep Comfort"),
     SoundscapeItem("ocean", "Starlight Ocean", "Gentle rhythmic ocean tides under stars", "🌊", "Anxiety Ease"),
     SoundscapeItem("night", "Midnight Chimes", "Deep peaceful chimes & serene night", "🌙", "Meditation")
 )
@@ -132,6 +133,18 @@ class SoothingSoundscapeEngine {
                                 val white = (random.nextDouble() * 2.0 - 1.0)
                                 filterState = 0.97 * filterState + 0.03 * white
                                 val sample = (filterState * 0.3 + tone) * 32767.0 * vol * 0.4
+                                buffer[i] = sample.coerceIn(-32767.0, 32767.0).toInt().toShort()
+                            }
+                        }
+                        "purr" -> {
+                            // Warm rhythmic cat purr modulation with low frequency carrier
+                            for (i in buffer.indices) {
+                                phase += dt * 28.0
+                                val breath = (sin(phase * (1.6 / 28.0)) + 1.0) * 0.5
+                                val purrCarrier = sin(phase)
+                                val white = (random.nextDouble() * 2.0 - 1.0)
+                                filterState = 0.92 * filterState + 0.08 * white
+                                val sample = (purrCarrier * 0.7 + filterState * 0.3) * (0.35 + 0.65 * breath) * 32767.0 * vol * 0.55
                                 buffer[i] = sample.coerceIn(-32767.0, 32767.0).toInt().toShort()
                             }
                         }

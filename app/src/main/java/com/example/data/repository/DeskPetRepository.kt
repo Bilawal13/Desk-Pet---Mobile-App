@@ -387,13 +387,17 @@ class DeskPetRepository(private val dao: DeskPetDao) {
                     dao.updatePet(active.copy(headwear = headwearId))
                 }
             }
-        } else if (product.category == "furniture") {
+        } else if (product.category == "furniture" || product.category == "themes") {
             val decors = dao.getAllRoomDecor().firstOrNull() ?: emptyList()
             decors.find { it.itemId == productId }?.let { decor ->
                 dao.insertRoomDecor(decor.copy(isVisible = true))
             }
         }
         return true
+    }
+
+    suspend fun setRoomDecorSlot(slotId: String, itemId: String, isVisible: Boolean = true) {
+        dao.insertRoomDecor(RoomDecor(slotId = slotId, itemId = itemId, isVisible = isVisible))
     }
 
     private suspend fun advanceTaskMasterMission() {
